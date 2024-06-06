@@ -1,14 +1,7 @@
 import { Ticket } from './ticket';
 
 export class TicketOffice {
-  private amount: number;
-
-  private tickets: Array<Ticket>;
-
-  constructor(amount: number, tickets: Array<Ticket>) {
-    this.amount = amount;
-    this.tickets = tickets;
-  }
+  constructor(private amount: number, private tickets: Array<Ticket>) {}
 
   get getTicket(): Ticket {
     return this.tickets.pop();
