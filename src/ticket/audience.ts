@@ -1,13 +1,10 @@
 import { Bag } from './bag';
+import { Ticket } from './ticket';
 
 export class Audience {
-  private readonly bag: Bag;
+  constructor(private bag: Bag) {}
 
-  constructor(bag: Bag) {
-    this.bag = bag;
-  }
-
-  get getBag(): Bag {
-    return this.bag;
+  buy(ticket: Ticket): number {
+    return this.bag.hold(ticket);
   }
 }

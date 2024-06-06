@@ -1,13 +1,10 @@
 import { TicketOffice } from './ticketOffice';
+import { Audience } from './audience';
 
 export class TicketSeller {
-  private readonly ticketOffice: TicketOffice;
+  constructor(private ticketOffice: TicketOffice) {}
 
-  constructor(ticketOffice: TicketOffice) {
-    this.ticketOffice = ticketOffice;
-  }
-
-  get getTicketOffice(): TicketOffice {
-    return this.ticketOffice;
+  sellTo(audience: Audience) {
+    this.ticketOffice.plusAmount(audience.buy(this.ticketOffice.getTicket));
   }
 }
